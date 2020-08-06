@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>Fluid and Fixed Containers</title>
+    <style>
+        .row div {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .block {
+            margin: 10px;
+            padding: 5px 2px;
+            border: 1px solid black;
+        }
+        .bg-success a {
+            font-size: 0.7em; 
+            color:#EDD; 
+            text-decoration: underline;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div class="block">
+        <h1 style="text-align: center;"> Container Types </h1>
+        <div class="container" style="background: #E99;">
+            <h3> Fixed Container: has max-width for every breakpoint </h1>
+        </div>
+    
+        <div class="container-sm" style="background: #EAA" >
+            <h3> Sm Container </h3>
+        </div>
+    
+        <div class="container-md" style="background: #EBB" >
+            <h3> Md Container </h3>
+        </div>
+    
+        <div class="container-lg" style="background: #ECC" >
+            <h3> Lg Container </h3>
+        </div>
+    
+        <div class="container-xl" style="background: #EDD;">
+            <h3> Xl Container </h1>
+        </div>
+    
+        <div class="container-fluid" style="background: #ddee55;">
+            <h3> Fluid Container: always 100% for every breakpoint </h1>
+        </div>
+    
+        <div> 
+            <h3> .container -> -sm -> -md -> -lg -> -xl -> fluid </h1>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="container">
+            <h3> Grid System </h3>
+            <p>
+                <dl>
+                    <dt> Usage </dt>
+                    <dd> col-(BreakPoint)-(Column) : 100% width until the breakpoint, then has a portion of n columns </dd>
+                </dl>
+            </p><br>
+    
+            <div> 6 columns each from small screen </div>
+            <div class="row">
+                <div class="col-sm-6" >col-sm-6</div>
+                <div class="col-sm-6" >col-sm-6</div>
+            </div><br>
+    
+            <div> 6 columns each from medium screen, then change to 3 columns from large screen</div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">col-md-6 col-lg-3</div>
+                <div class="col-md-6 col-lg-3">col-md-6 col-lg-3</div>
+                <div class="col-md-6 col-lg-3">col-md-6 col-lg-3</div>
+                <div class="col-md-6 col-lg-3">col-md-6 col-lg-3</div>
+            </div><br>
+    
+            <div> 3 columns each for every screen size. Use .w-100 to break a line, or just add .row-cols-n to row's class.</div>
+            <div class="row">
+                <div class="col-3">col-3</div>
+                <div class="col-3">col-3</div>
+                <div class="w-100" style="border: none; padding: 0; margin: 0;"></div>
+                <div class="col-3">col-3</div>
+                <div class="col-3">col-3</div>
+            </div><br>
+
+            <div> If you leave out the n part, it automatically fits to remaining width.</div>
+            <div class="row">
+                <div class="col-2">col-2</div>
+                <div class="col">col</div>
+                <div class="col-5">col-5</div>
+            </div><br><br>
+
+            <h3> Grid System - Alignment and Ordering</h3>
+            <div class="container">
+                <div> <b>Horizontal Alignment:</b> .justify-content-(start/center/end/around/between) </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-3">aligned center</div>
+                    <div class="col-md-5">aligned center</div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-md-3">col-md-3 around</div>
+                    <div class="col-md-3">col-md-3 around</div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-md-3">col-md-3 between</div>
+                    <div class="col-md-3">col-md-3 between</div>
+                </div><br>
+
+                <div> <b>Ordering:</b> .order-(first/last/n), keep in mind that the max of n is 12th. </div>
+                <div class="row">
+                    <div class="col order-last">First in DOM, ordered last</div>
+                    <div class="col order-first">Second in DOM, ordered first</div>
+                    <div class="col order-5">Third in DOM, ordered 5th</div>
+                    <div class="col order-3">Last in DOM, ordered 3rd</div>
+                </div><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <h3> Jumbotron, Utilities and Cards </h3>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="display-3">Jumbotron Basics</div>
+                <div class="lead">
+                    <li>Add .jumbotron-fluid to get rid of border-radius</li>
+                    <li>Use .container inside of a jumbotron to get it aligned</li>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron bg-success text-white">
+            <div class="container">
+                <div class="display-3">Utilities (This is .display-3)</div>
+                <div class="lead">
+                    <li> Use .lead to slightly modify its font style. 
+                        <a href="https://getbootstrap.com/docs/4.0/content/typography/">Bootstrap/Typography</a>
+                    </li>
+                    <li class="text-body"> Use text-(color options) to change font color, bg-(color-options) for bg color.
+                        <a href="https://getbootstrap.com/docs/4.0/utilities/colors/">Bootstrap/Colors</a>
+                    </li>
+                    <div class="text-lg-right">
+                        Use text-(break point)-(left/center/right/justify) to align text.
+                        <a href="https://getbootstrap.com/docs/4.0/utilities/text/">Bootstrap/Text</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Cards -->
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card" style="border:none;">
+                        <img src="src/img/landscape_001.jpg" class="card-img">
+                        <div class="card-body">
+                            <!-- Add extra paddings to a card -->
+                            <h3 class="card-title">Card-title to h tags</h3>
+                            <h5 class="card-subtitle mb-2 text-muted" style="text-align: center;">Card-Subtitle to h tags</h5>
+                            <p class="card-text">
+                                <li> <b>Basic Structure: </b><br>
+                                    Container >> Card >> Card-Img / Card-Body >> Card-Text, Card-Title, Card-Subtitle </li>
+                                <li> <b>.card-img(-top/bottom):</b><br> above or under a .card-body wrap.</li>
+                            </p>
+                            <a href="" class="card-link">.card-link 1</a>
+                            <a href="https://getbootstrap.com/docs/4.0/components/card/" class="card-link">Bootstrap/Cards</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card" style="border:none;">
+                        <img src="src/img/landscape_001.jpg" class="card-img">
+                        <div class="card-body">
+                            <!-- Add extra paddings to a card -->
+                            <h3 class="card-title">Card-title to h tags</h3>
+                            <h5 class="card-subtitle mb-2 text-muted" style="text-align: center;">Card-Subtitle to h tags</h5>
+                            <p class="card-text">
+                                <li> <b>Basic Structure: </b><br>
+                                    Container >> Card >> Card-Body, Card-Text </li>
+                                <li> <b>.card-img(-top/bottom):</b><br> above or under a .card-body wrap.</li>
+                            </p>
+                            <a href="" class="card-link">.card-link 1</a>
+                            <a href="" class="card-link">.card-link 2</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card" style="border:none;">
+                        <img src="src/img/landscape_001.jpg" class="card-img">
+                        <div class="card-body">
+                            <!-- Add extra paddings to a card -->
+                            <h3 class="card-title">Card-title to h tags</h3>
+                            <h5 class="card-subtitle mb-2 text-muted" style="text-align: center;">Card-Subtitle to h tags</h5>
+                            <p class="card-text">
+                                <li> <b>Basic Structure: </b><br>
+                                    Container >> Card >> Card-Body, Card-Text </li>
+                                <li> <b>.card-img(-top/bottom):</b><br> above or under a .card-body wrap.</li>
+                            </p>
+                            <a href="" class="card-link">.card-link 1</a>
+                            <a href="" class="card-link">.card-link 2</a>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Row-->
+            </div>
+            <!-- End of Container -->
+        </div>
+        <!-- End of Block -->
+        <br>
+    </div>
+
+    <div class="block">
+        <div class="container">
+            <h3 class="display-4 text-center pt-4 mb-1">Navigation Bar</h3>
+            <h4 class="lead text-center mb-2"><b>.nav</b> makes the element flex, then <b>.nav-link</b> to add a menu item</h4>
+            <div class="jumbotron py-1">
+                <li> <b>Alignment:</b> .justify-content-(left/center/right) </li>
+                <li> <b>Layout:</b> .flex-(break point)-(column/row) </li>
+                <li> <b>Styling:</b> .nav-pills to look like a button when active </li>
+                <li> <b>Data Binding:</b> <br>
+                    <div style="text-indent: 50px;"> 1. a boolean at <b>data-toggle="tab"</b> to each <b>.nav-link</b> </div>
+                    <div style="text-indent: 50px;"> 2. Write <b>.tab-content</b> >> <b>.tab-pane</b> (with id attr) to display contents  </div>
+                </li>
+            </div>
+
+            <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a href="#Menu1" class="nav-link active" data-toggle="tab">Menu 1</a>
+                <a href="#Menu2" class="nav-link" data-toggle="tab">Menu 2</a>
+                <a href="#Menu3" class="nav-link" data-toggle="tab">Menu 3</a>
+                <a href="#Menu4" class="nav-link" data-toggle="tab">Menu 4</a>
+            </nav>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="Menu1"> This is Menu 1</div>
+                <div class="tab-pane" id="Menu2"> This is Menu 2</div>
+                <div class="tab-pane" id="Menu3"> This is Menu 3</div>
+                <div class="tab-pane" id="Menu4"> This is Menu 4</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+  </body>
+</html>
